@@ -164,6 +164,11 @@ const toggleMnemonicRestoreModal = () => {
 
 const signMessage = async (inputMsg) => {
   signature=$('#inputMsg').val()
-  console.log(signature)
-  $('#signedMessage').html(signature)
+  // let wallet=loadFromPrivateKey()
+  const wallet = await loadFromPrivateKey();
+  get_sign=await wallet.signMessage(signature);
+  console.log(signature,get_sign);
+  $('#signedMessage').html(signature);
+  
+  $('#signature').html(get_sign);
 };
