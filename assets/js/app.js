@@ -161,3 +161,9 @@ const togglePasscodeModal = () => {
 const toggleMnemonicRestoreModal = () => {
   $('#mdlMnemonicRestore').modal('toggle');
 };
+
+const signMessage = async (inputMsg) => {
+  signature=$('#inputMsg').val()
+  console.log(signature)
+  $('#signedMessage').html(signature)
+};
